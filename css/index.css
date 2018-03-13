@@ -1,0 +1,142 @@
+@charset "utf-8";
+
+@charset "UTF-8";
+/*
+ **功能：公用样式表
+ **
+ **/
+
+/*初始化标签样式*/
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,dl,dt,dd{
+    margin:0;
+    padding:0;
+}
+ul,ol{
+    list-style: none;
+}
+a{
+    color: #777;
+    text-decoration: none;
+}
+input,button{
+    outline: none;
+}
+/*显示设置H5标签类型:兼容老版本浏览器*/
+header,footer,nav,aside,article,section,div{
+    display: block;
+}
+/*清除浮动*/
+.clearfix:after{
+    clear:both;
+}
+.clearfix:before,.clearfix:after{
+    content: '';
+    display: table;
+}
+/*浮动*/
+.fl{float: left;}
+.fr{float: right;}
+
+*{
+    margin:0;
+    padding:0;
+
+
+}
+#section{
+    width:350px;
+    height:600px;
+    border:5px solid black;
+}
+.mainLeft{
+    width:200px;
+    height:600px;
+    border-right:2px solid black;
+    box-sizing:border-box;
+    float: left;
+    position: relative;
+}
+.mainRight{
+    width:150px;
+    height:600px;
+    float: right;
+    box-sizing:border-box;
+
+}
+.elevator{
+    width:100%;
+    height:100px;
+    background-color:blueviolet ;
+    border:1px solid black;
+    box-sizing:border-box;
+    position: absolute;
+    bottom:0;
+    -webkit-transition: all 2s linear;
+    -moz-transition: all 2s linear;
+    -ms-transition: all 2s linear;
+    -o-transition: all 2s linear;
+    transition: all 2s linear;
+}
+.elevatorLeft,.elevatorRight{
+    width:50%;
+    height:100%;
+    background-color:black;
+    border:1px solid #fff;
+    float: left;
+    box-sizing:border-box;
+    overflow: hidden;
+    transition: all 1s   linear;
+}
+.elevatorRight{
+    float: right;
+    right: -30px;
+}
+.floor{
+    width:100%;
+    height:100px;
+    border-bottom:2px solid #000;
+    box-sizing:border-box;
+    position: relative;
+}
+.floor-1{
+    border:none;
+}
+.floor>.num{
+    position: absolute;
+    font-size:35px;
+    font-weight:700;
+    top:25px;
+    left:94px;
+}
+.floor>.btn{
+    width:30px;
+    height:30px;
+    line-height:30px;
+    border:1px solid #000;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+}
+.floor .btn{
+    position: absolute;
+    top:10px;
+    left:35px;
+}
+.floor .button{
+    position: absolute;
+    top:54px;
+    left:35px;
+}
+
+
+.show{
+    background-color: black;
+    color: #fff;
+}
+.floor .disabled{
+    background-color:#999;
+    color: #fff;
+    cursor:no-drop;
+}

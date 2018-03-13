@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>电梯程序</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<main id="main">
+    <section id="section" class="clearfix">
+        <div class="mainLeft">
+            <div class="elevator clearfix">
+                <div class="elevatorLeft"></div>
+                <div class="elevatorRight"></div>
+            </div>
+        </div>
+        <div class="mainRight">
+            <div class="floor floor-6">
+                <div class="num">6</div>
+                <div class="btn top disabled">↑</div>
+                <div class="btn button">↓</div>
+            </div>
+            <div class="floor floor-5">
+                <div class="num">5</div>
+                <div class="btn top">↑</div>
+                <div class="btn button">↓</div>
+            </div>
+            <div class="floor floor-4">
+                <div class="num">4</div>
+                <div class="btn top">↑</div>
+                <div class="btn button">↓</div>
+            </div>
+            <div class="floor floor-3">
+                <div class="num">3</div>
+                <div class="btn top">↑</div>
+                <div class="btn button">↓</div>
+            </div>
+            <div class="floor floor-2">
+                <div class="num">2</div>
+                <div class="btn top">↑</div>
+                <div class="btn button">↓</div>
+            </div>
+            <div class="floor floor-1">
+                <div class="num">1</div>
+                <div class="btn top">↑</div>
+                <div class="btn button disabled">↓</div>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+
+<script src="../../plugin/jquery.js"></script>
+<script>
+$(function () {
+    //向上向下按钮的点击事件
+    $('.btn').on('click',function () {
+
+        //添加class
+        $(this).addClass('show');
+        //获取楼层数
+        var num=Number($(this).parent().children('div.num').text());
+        //设置电梯的高度
+        var count=(num-1)*100;
+        $('.elevator').css("bottom",count+"px");
+        //延迟电梯门打开的时间
+        setTimeout(function () {
+            $('.elevatorLeft').css("width","0px");
+            $('.elevatorRight').css("width","0px");
+            $('.btn').removeClass('show');
+        },2100)
+        //延迟电梯门关上的时间
+        setTimeout(function () {
+            $('.elevatorLeft').css("width","50%");
+            $('.elevatorRight').css("width","50%");
+
+        },3700)
+    })
+
+})
+
+
+</script>
+</body>
+</html>
